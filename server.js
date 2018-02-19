@@ -39,7 +39,7 @@ var htmlTemplate=`<html>
         </div>
         <div>{$date}</div>
         <div>
-        {$content};
+        {$content}
         </div>
         </div>
     </body>
