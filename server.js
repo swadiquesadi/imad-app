@@ -5,11 +5,58 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
+var articleOne ={
+    title:'Article one|swadique',
+    heading:'Article one',
+    date:'20 FEB 2018',
+    content:` <p>this is my first arcle.i create this article to test my first url accessible page.this is my first arcle.i create this article to test my first url accessible pagethis is my first arcle.i create this article to test my first url accessible pagethis is my first arcle.i create this article to test my first url accessible pagethis is my first arcle.i create this article to test my first url accessible page
+            </p>
+        </div>
+        <div>
+            <p>this is my first arcle.i create this article to test my first url accessible page.this is my first arcle.i create this article to test my first url accessible pagethis is my first arcle.i create this article to test my first url accessible pagethis is my first arcle.i create this article to test my first url accessible pagethis is my first arcle.i create this article to test my first url accessible page
+            </p>`
+};
+createTemplate(data){
+    
+var title=data.title;
+var heading=data.heading;
+var date=data.date;
+var content=data.content;
+var htmlTemplate=`<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>{$title}</title>
+    <link href="/ui/style.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="container">
+        <div><a href="/">home</a></div>
+        <hr/>
+        <div>
+            <h3>{$heading}</h3>
+        </div>
+        <div>{$date}</div>
+        <div>
+        {$content};
+        </div>
+        </div>
+    </body>
+    
+</html>`;
+    return htmlTemplate;
+}
+    
+
+
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 app.get('/article-one',function(req,res){
-     res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+     res.send(createTemplate(articleOne));
 });
 app.get('/article-two',function(req,res){
     res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
