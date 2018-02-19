@@ -17,7 +17,7 @@ var articleOne ={
             <p>this is my first arcle.i create this article to test my first url accessible page.this is my first arcle.i create this article to test my first url accessible pagethis is my first arcle.i create this article to test my first url accessible pagethis is my first arcle.i create this article to test my first url accessible pagethis is my first arcle.i create this article to test my first url accessible page
             </p>`
 };
-createTemplate(data){
+function createTemplate(data){
     
 var title=data.title;
 var heading=data.heading;
