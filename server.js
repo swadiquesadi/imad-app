@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles={
-var articleOne :{
+ articleOne:{
     title:'Article one|swadique',
     heading:'Article one',
     date:'20 FEB 2018',
@@ -17,16 +17,15 @@ var articleOne :{
             <p>this is my first arcle.i create this article to test my first url accessible page.this is my first arcle.i create this article to test my first url accessible pagethis is my first arcle.i create this article to test my first url accessible pagethis is my first arcle.i create this article to test my first url accessible pagethis is my first arcle.i create this article to test my first url accessible page
             </p>`
 },
-var articleTwo:{ title:'Article one|swadique',
+ articleTwo:{ title:'Article two|swadique',
     heading:'Article two',
     date:'30 FEB 2018',
-    content: <p>this is my second article for second article page
-            </p>},
-var articleThree:{ title:'Article one|swadique',
+    content: `<p>this is my second article for second article page</p>`},
+ articleThree:{ title:'Article three|swadique',
     heading:'Article two',
     date:'30 FEB 2018',
-    content: <p>this is my second article for second article page
-            </p>},
+    content: `<p>this is my second article for second article page
+            </p>`}};
 function createTemplate(data){
     
 var title=data.title;
