@@ -26,7 +26,9 @@ var content=data.content;
 var htmlTemplate=`<html>
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>{$title}</title>
+    <title>
+    ${title}
+    </title>
     <link href="/ui/style.css" rel="stylesheet">
     </head>
     
@@ -35,17 +37,17 @@ var htmlTemplate=`<html>
         <div><a href="/">home</a></div>
         <hr/>
         <div>
-            <h3>{$heading}</h3>
+            <h3>${heading}</h3>
         </div>
         <div>{$date}</div>
         <div>
-        {$content}
+        ${content}
         </div>
         </div>
     </body>
     
 </html>`;
-    return htmlTemplate;
+return htmlTemplate;
 }
     
 
