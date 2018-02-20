@@ -6,13 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 
-app.get('/counter',function (req, res) {
-    counter = counter+1;
-    
-    res.send(counter.toString());
-   
-    
-});
+
 
 var articles={
  'article-one':{
@@ -67,8 +61,13 @@ var htmlTemplate=`<html>
 </html>`;
 return htmlTemplate;
 }
-
-
+app.get('/counter',function (req, res) {
+    counter = counter+1;
+    
+    res.send(counter.toString());
+   
+    
+});
 app.get('/:article',function(req,res){
     var article=req.params.article;
      res.send(createTemplate(articles[article]));
