@@ -72,10 +72,7 @@ app.get('/counter',function (req, res) {
    
     
 });
-app.get('/:article',function(req,res){
-    var article=req.params.article;
-     res.send(createTemplate(articles[article]));
-});
+
 
 
 
@@ -93,6 +90,10 @@ app.get('/ui/madi.png', function (req, res) {
 });
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+});
+app.get('/:article',function(req,res){
+    var article=req.params.article;
+     res.send(createTemplate(articles[article]));
 });
 
 
