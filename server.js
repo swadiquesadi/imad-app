@@ -57,7 +57,7 @@ var htmlTemplate=`<html>
     
 </html>`;
 return htmlTemplate;
-};
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -65,12 +65,13 @@ app.get('/:article',function(req,res){
     var article=req.params.article;
      res.send(createTemplate(articles[article]));
 });
+
 var counter=0;
 app.get('/counter',function (req, res) {
     counter=counter+1;
-     console.log("counter start");
+    
     res.send(counter.toString());
-    console.log("counter done");
+   
     
 });
 app.get('/ui/style.css', function (req, res) {
