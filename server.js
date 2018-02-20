@@ -4,6 +4,16 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+app.get('/counter',function (req, res) {
+    counter = counter+1;
+    
+    res.send(counter.toString());
+   
+    
+});
 
 var articles={
  'article-one':{
@@ -26,7 +36,7 @@ var articles={
     date:'30 FEB 2018',
     content: `<p>this is my second article for second article page
             </p>`}};
-function createTemplate(data){
+function createTemplate($data){
     
 var title=data.title;
 var heading=data.heading;
@@ -58,9 +68,7 @@ var htmlTemplate=`<html>
 </html>`;
 return htmlTemplate;
 }
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
+
 
 app.get('/:article',function(req,res){
     var article=req.params.article;
@@ -68,13 +76,7 @@ app.get('/:article',function(req,res){
 });
 
 var counter=0;
-app.get('/counter',function (req, res) {
-    counter = counter+1;
-    
-    res.send(counter.toString());
-   
-    
-});
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
