@@ -57,11 +57,6 @@ var htmlTemplate=`<html>
 </html>`;
 return htmlTemplate;
 }
-app.get('/:article',function(req,res){
-    var article=req.params.article;
-     res.send(createTemplate(articles[article]));
-});
-
 app.get('/counter',function (req, res) {
     counter = counter+1;
     
@@ -69,6 +64,12 @@ app.get('/counter',function (req, res) {
    
     
 });
+app.get('/:article',function(req,res){
+    var article=req.params.article;
+     res.send(createTemplate(articles[article]));
+});
+
+
 
 
 
