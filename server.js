@@ -4,6 +4,10 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
+app.get('/:article',function(req,res){
+    var article=req.params.article;
+     res.send(createTemplate(articles[article]));
+});
 
 app.get('/counter',function (req, res) {
     counter = counter+1;
