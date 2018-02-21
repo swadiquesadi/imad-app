@@ -11,7 +11,7 @@ request.onreadystatechange = function(){
                                                 span.innerHTML=counter.toString();
                                                 }
                                          }
-                                        }
+                                        };
 request.open('GET','http://http://swadiquesadi.imad.hasura-app.io/counter',true);
 request.send(null);
 };
