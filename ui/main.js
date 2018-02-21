@@ -21,8 +21,7 @@ var name=nameInput.value;
 var submit=document.getElementById('submit_btn');
 submit.onclick=function(){
   
-    var ul=document.getElementById('namelist');
-    ul.innerHTML=list;
+   
     console.log("loaded");
     
 };
@@ -45,6 +44,6 @@ submit.onclick()=function(){
                 }
             }
    };
-request.open('GET','http://swadiquesadi.imad.hasura-app.io/namelist?name=request.responseText');
+request.open('GET','http://swadiquesadi.imad.hasura-app.io/submit-name?name=request.responseText');
 request.send(null);
 };
