@@ -95,7 +95,7 @@ app.get('/:article',function(req,res){
     var article=req.params.article;
      res.send(createTemplate(articles[article]));
 });
-var names[];
+var names=[];
 app.get('/submit-name/:name',function(req,res){
     var name=req.params.name;
     names.push(name);
