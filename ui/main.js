@@ -36,9 +36,11 @@ submit.onclick() =function(){
                         }
                        var ul=document.getElementById('namelist');
                         ul.innerHTML=list;
+                        console.log("work1");
                 }
             }
    };};
-request.open('GET','http://swadiquesadi.imad.hasura-app.io/submit-name?name='+name,true);
+request.open('GET','http://swadiquesadi.imad.hasura-app.io/submit-name?name='+ name,true);
 request.send(null);
+console.log("work 2");
 
