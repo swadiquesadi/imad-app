@@ -18,9 +18,9 @@ request.send(null);
 };
 var nameInput=document.getElementById('name');
 var name=nameInput.value;
-var submit=document.getElementById('submit_btn');
+var submt=document.getElementById('submit_btn');
 
-submit.onclick()=function(){
+submt.onclick() =function(){
     var request=new XMLHttpRequest();
     request.onreadystatechange= function(){
         if(request.readyState===XMLHttpRequest.DONE)
