@@ -1,5 +1,4 @@
 var button=document.getElementById("counter");
-var counter=0;
 var span=document.getElementById("count");
 button.onclick=function(){
 var request=new XMLHttpRequest();
