@@ -18,9 +18,9 @@ request.send(null);
 };
 var nameInput=document.getElementById('name');
 var name=nameInput.value;
-var submt=document.getElementById('submit_btn');
+var submit=document.getElementById('submit_btn');
 
-submt.onclick() =function(){
+submit.onclick() =function(){
     var request=new XMLHttpRequest();
     request.onreadystatechange= function(){
         if(request.readyState===XMLHttpRequest.DONE)
@@ -38,7 +38,7 @@ submt.onclick() =function(){
                         ul.innerHTML=list;
                 }
             }
-   };
+   };};
 request.open('GET','http://swadiquesadi.imad.hasura-app.io/submit-name?name='+name,true);
 request.send(null);
-};
+
