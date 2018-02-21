@@ -1,5 +1,4 @@
 var button=document.getElementById("counter");
-var span=document.getElementById("count");
 button.onclick=function(){
 var request=new XMLHttpRequest();
 request.onreadystatechange = function(){
@@ -13,6 +12,6 @@ request.onreadystatechange = function(){
                                                 }
                                          }
                                         }
-request.open('GET',"http://http://swadiquesadi.imad.hasura-app.io/",true);
+request.open('GET','http://http://swadiquesadi.imad.hasura-app.io/',true);
 request.send(null);
 };
