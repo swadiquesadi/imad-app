@@ -16,9 +16,9 @@ request.onreadystatechange = function(){
 request.open('GET','http://swadiquesadi.imad.hasura-app.io/counter',true);
 request.send(null);
 };
-var nameInput=document.getElementById('name');
 
 
+var submit=document.getElementById('submit_btn');
 submit.onclick=function()
 {
 var request=new XMLHttpRequest();
@@ -42,7 +42,7 @@ if(request.readyState===XMLHttpRequest.DONE)
             }
    }
    
-var submit=document.getElementById('submit_btn');
+var nameInput=document.getElementById('name');
 var name=nameInput.value;
 
   request.open('GET','http://swadiquesadi.imad.hasura-app.io/submit-name?name='+ name,true);
