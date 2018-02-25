@@ -20,7 +20,8 @@ body {
     height: 200px;
 }
 .container{
-    margin-left:25px;
+    margin-left:auto;
+    margin-right:auto;
 
 }
 
