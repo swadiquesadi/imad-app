@@ -123,7 +123,7 @@ app.get('/articles/:articleName',function(req,res){
             res.send(createTemplate(articleData));
             }
         }
-    });
+    };);
      
 });
 // Do not change port, otherwise your app won't run on IMAD servers
