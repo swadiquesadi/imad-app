@@ -9,7 +9,7 @@ var config={
     database:'swadiquesadi',
     host:'http://db.imad.hasura-app.io',
     port:'5432',
-    password:process.env.DB_PASSWORD
+    password:'db-swadiquesadi-82007'
     };
 var pool=new Pool(config);
 app.get('/test-db',function(req,res){
