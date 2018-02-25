@@ -107,7 +107,7 @@ app.get('/submit-name',function(req,res){
 
 });
 app.get('/articles/:articleName',function(req,res){
-    pool.query("SELECT * FROM article WHERE title='"+req.params.articleName+"'",function(err,result){
+    pool.query("SELECT * FROM article WHERE title= '"+req.params.articleName+"';", function(err,result){
     if(err)
         {
         res.status(500).send(err.toString()); 
@@ -115,7 +115,7 @@ app.get('/articles/:articleName',function(req,res){
     else{
             if(result.rows.length===0)
             {
-            res.status(404).send("no articles found");    
+            res.status(404).send('no articles found');    
             }
             else
             {
@@ -123,7 +123,7 @@ app.get('/articles/:articleName',function(req,res){
             res.send(createTemplate(articleData));
             }
         }
-    };);
+    });
      
 });
 // Do not change port, otherwise your app won't run on IMAD servers
