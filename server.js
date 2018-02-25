@@ -106,8 +106,8 @@ app.get('/submit-name',function(req,res){
     res.send(JSON.stringify(names));
 
 });
-app.get('/articles/:articleName',function(req,res)
-{
+app.get('/articles/:articleName',function(req,res){
+    console.log("db done");
     pool.query("SELECT * FROM articles WHERE title='"+req.params.articleName+"'",function(err,result){
     if(err)
         {
