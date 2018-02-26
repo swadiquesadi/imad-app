@@ -46,38 +46,37 @@ var articles={
     date:'30 FEB 2018',
     content: `<p>this is my second article for second article page
             </p>`}};
-function createTemplate($data){
+function createTemplate(data){
     
-// var title=data.title;
-// var heading=data.heading;
-// var date=data.date;
-// var content=data.content;
-// var htmlTemplate=`<html>
-//     <head>
-//     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-//     <title>
-//     {title}
-//     </title>
-//     <link href="/ui/style.css" rel="stylesheet">
-//     </head>
+var title=data.title;
+var heading=data.heading;
+var date=data.date;
+var content=data.content;
+var htmlTemplate=`<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+    ${title}
+    </title>
+    <link href="/ui/style.css" rel="stylesheet">
+    </head>
     
-//     <body>
-//         <div class="container">
-//         <div><a href="/">home</a></div>
-//         <hr/>
-//         <div>
-//             <h3>{heading}</h3>
-//         </div>
-//         <div>{date}</div>
-//         <div>
-//         {content}
-//         </div>
-//         </div>
-//     </body>
+    <body>
+        <div class="container">
+        <div><a href="/">home</a></div>
+        <hr/>
+        <div>
+            <h3>${heading}</h3>
+        </div>
+        <div>${date}</div>
+        <div>
+        ${content}
+        </div>
+        </div>
+    </body>
     
-// </html>`;
-// return htmlTemplate;
-return 'worked';
+</html>`;
+return htmlTemplate;
 }
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
