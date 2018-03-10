@@ -111,7 +111,7 @@ app.get('/submit-name',function(req,res){
 function hash(input,salt){
     var hashed=crypto.pbkdf25ync(input,salt,10000,512,'sha512');
     return hashed.toString('hex');
-}
+};
 app.get('/hash/:input',function(req,res){
     var hashedString=hash(req.params.input,'this-is-a-random string');
     res.send(hashedString);
