@@ -15,14 +15,7 @@ var config={
     password: process.env.DB_PASSWORD
     };
 var pool=new Pool(config);
-function hash(input,salt){
-    var hashed=crypto.pbkdf25ync(input,salt,10000,512,'sha512');
-    return hashed.toString('hex');
-}
-app.get('/hash/:input',function(req,res){
-    var hashedString=hash(req.params.input,'this-is-a-random string');
-    res.send(hashedString);
-});
+
 app.get('/test-db',function(req,res){
     pool.query('SELECT * FROM etest',function(err,result){
     if(err){
@@ -114,6 +107,14 @@ app.get('/submit-name',function(req,res){
     names.push(name);
     res.send(JSON.stringify(names));
 
+});
+function hash(input,salt){
+    var hashed=crypto.pbkdf25ync(input,salt,10000,512,'sha512');
+    return hashed.toString('hex');
+}
+app.get('/hash/:input',function(req,res){
+    var hashedString=hash(req.params.input,'this-is-a-random string');
+    res.send(hashedString);
 });
 app.get('/articles/:articleName',function(req,res){
     pool.query("SELECT * FROM article WHERE title= $1",[req.params.articleName], function(err,result){
