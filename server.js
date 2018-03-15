@@ -142,7 +142,7 @@ app.post('/login',function(req,res){
         
    });
     
-})
+});
 
 app.post('/create-user',function(req,res){
    var username=req.body.username;
