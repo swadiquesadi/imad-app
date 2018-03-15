@@ -117,6 +117,32 @@ app.get('/hash/:input',function(req,res){
     var hashedString=hash(req.params.input,'this-is-a-random string');
     res.send(hashedString);
 });
+app.post('/login',function(req,res){
+    var username=req.body.username;
+   var password=req.body.password;
+   pool.query('SELECT * FROM "user" WHERE username=$1',[username],function(err,result)
+   {
+       if(err)
+       {
+        result.status(500).send(err.toString());
+       }
+       if(result.length.rows===0)
+       {
+           res.send(403).send("username or password is incorrect");
+       }
+       else{
+           var dbstring=result.rows[0].password;
+           var salt=dbstring.split('$')[2];
+           var hashedpassword=hash(password,salt);
+           if(dbstring===hashedpassword)
+            {res.send("Credentials are correct");}
+            else
+            {res.send(403).send("username or password incorrect");}
+            }
+        
+   });
+    
+})
 
 app.post('/create-user',function(req,res){
    var username=req.body.username;
