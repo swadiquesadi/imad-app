@@ -114,7 +114,8 @@ app.post('/login',function(req,res){
        {
         result.status(500).send(err.toString());
        }
-       if(result.length.rows===0)
+       else{
+          if(result.length.rows===0)
        {
            res.send(403).send("username or password is incorrect");
        }
@@ -126,7 +127,7 @@ app.post('/login',function(req,res){
             {res.send("Credentials are correct");}
             else
             {res.send(403).send("username or password incorrect");}
-            }
+            }}
         
    });
     
