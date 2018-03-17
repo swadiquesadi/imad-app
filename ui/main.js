@@ -34,7 +34,11 @@ request.send(JSON.stringify({username:username,password:password}));
 var logout=document.getElementById('logout_btn');
 logout.onclick=function()
 {
-request.open('GET','http://swadiquesadi.imad.hasura-app.io/login',true);
+var request=new XMLHttpRequest();
+request.onreadystatechange= function(){
+    alert("successfully logged out");
+}
+request.open('GET','http://swadiquesadi.imad.hasura-app.io/logout',true);
 request.send(null);
 };
 
