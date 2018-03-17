@@ -112,7 +112,7 @@ app.post('/login',function(req,res){
    {
        if(err)
        {
-        result.status(500).send(err.toString());
+        res.status(500).send(err.toString());
        }
        else{
           if(result.length.rows===0)
@@ -123,7 +123,7 @@ app.post('/login',function(req,res){
            var dbstring=result.rows[0].password;
            var salt=dbstring.split('$')[2];
            var hashedpassword=hash(password,salt);
-           if(dbstring===hashedpassword)
+           if(hashedpassword===dbstring)
             {res.send("Credentials are correct");}
             else
             {res.send(403).send("username or password incorrect");}
@@ -142,7 +142,7 @@ app.post('/create-user',function(req,res){
    {
        if(err)
        {
-        result.status(500).send(err.toString());
+        res.status(500).send(err.toString());
        }
        else{
            res.send('user successfully created'+username);
